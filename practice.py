@@ -81,6 +81,18 @@ def multiplie_list_items(arr):
     for i in arr:
         result = result * i
     return result
-print(multiplie_list_items([1,2,3,4,5]))
+# print(multiplie_list_items([1,2,3,4,5]))
+# Python program to find second largest number in a list
+def secondlargest(arr):
+    l1 = list(set(arr))
+    l1.sort()
+    return l1[-2]
+# print(secondlargest([2,3,41,2,4,5,2,4,2,5,2,5,46,5,6]))
+# Python program to print even numbers in a list
+def even_number(arr):
+    even_num = [ i for i in arr if i % 2 == 0]
+    return even_num
+# print(even_number([2,3,4,6,7,8,54,7,8]))
+
 
 
