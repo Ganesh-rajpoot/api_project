@@ -93,6 +93,67 @@ def even_number(arr):
     even_num = [ i for i in arr if i % 2 == 0]
     return even_num
 # print(even_number([2,3,4,6,7,8,54,7,8]))
+def duplicate_element(arr):
+    unique_ele = []
+    duplicate_ele = []
+    for i in arr:
+        if i in unique_ele:
+            unique_ele.append(i)
+        elif i not in duplicate_ele:
+            duplicate_ele.append(i)
+    return duplicate_ele
+# print(duplicate_element([3,4,5,6,2,3,3,4,5,6]))
 
-
-
+# Python – Remove empty List from List
+def remove_empty_list(arr):
+    l = [i for i in arr if i != []]
+    return l
+# print (remove_empty_list([1,2,3,[],4,[],44,[],3,5,[]]))
+#Convert numeric words to numbers
+def num_words_to_number(strings):
+    num_dict = {
+    'one': '1',
+    'two': '2',
+    'three': '3',
+    'four': '4',
+    'five': '5',
+    'six': '6',
+    'seven': '7',
+    'eight': '8',
+    'nine': '9',
+    'zero': '0'
+    }
+    result = ""
+    for ele in strings.split():
+        result += num_dict[ele]
+    return result
+# print(num_words_to_number('zero four zero one'))
+def check_palindrom(txt):
+    mid = (len(txt)-1)//2
+    low = 0
+    high = len(txt)-1
+    flag = 0
+    while low<=mid:
+        if txt[low] == txt[high]:
+            high -=1
+            low +=1
+        else:
+            flag = 1
+            break
+    if flag == 0:
+        return "The enter string is palindrome"
+    else:
+        return "The enter string is not palindrome"
+    
+# print(check_palindrom('amaama'))
+# Reverse words in a given String in Python
+def revers_string(txt):
+    return txt[::-1]
+# print(revers_string('ganesh'))
+def revers_string_ws(txt):
+    l = []
+    s = txt.split()[::-1]
+    for i in s:
+        l.append(i)
+    return ' '.join(l)
+print(revers_string_ws('this is my laptop'))

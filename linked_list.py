@@ -21,6 +21,19 @@ class LinkedList:
             print(curr.data)
             curr = curr.next
             # return curr.data
+    def append(self,value):
+        new_node = Node(value)
+
+        if self.head == None:
+            self.head = new_node
+            self.size += 1
+            return 
+        curr = self.head
+        while curr.next != None:
+            curr = curr.next
+        curr.next = new_node
+        self.size +=1
+
 
 
 l = LinkedList()
@@ -33,6 +46,7 @@ c = Node(30)
 l.insert_head(1)
 l.insert_head(2)
 l.insert_head(3)
+l.append(6)
 print("traverse",l.traverse())
 
 
